@@ -1,0 +1,38 @@
+@media (min-width:576px) {
+   nav .right-nav .sitt{display: none;}
+    nav .right-nav button span{display: none;}
+    nav .left-nav p{display: none;}
+    nav .left-nav h2{font-size: 20px;}
+    nav .left-nav{transform: translateY(0);}
+    nav .left-nav .icon-left{transform: translatey(0);padding: 7px;}
+    .total .name{font-size: 11px !important;}
+    .fav .name{font-size: 11px !important;}
+    .emerg .name{font-size: 11px !important;}
+    .total .num{font-size: 20px;}
+    .fav .num{font-size: 20px;}
+    .emerg .num{font-size: 20px;}
+    .title{font-size: 24px;}
+    
+}
+@media (min-width:668px){
+    nav .left-nav{transform: translateY(5%);}
+    nav .left-nav .icon-left{transform: translatey(-12%);padding: 10px;}
+    nav .left-nav h2{font-size: 24px;}
+    nav .left-nav p{display: block;}
+.total .name{font-size: 12px !important;}
+    .fav .name{font-size: 12px !important;}
+    .emerg .name{font-size: 12px !important;}
+   nav .right-nav .sitt{display: block;}
+    nav .right-nav button span{display: inline;}
+    .total .num{font-size: 24px;}
+    .fav .num{font-size: 24px;}
+    .emerg .num{font-size: 24px;}
+    .title{font-size: 30px;}
+.container-fluid{width: 97%;}
+
+
+}
+@media (min-width:1400px){
+.container-fluid{width: 85%;}
+
+}

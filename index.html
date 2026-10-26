@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/media.css" />
+  </head>
+  <body>
+    <main class="">
+      <section class="">
+        <div class="container-fluid">
+          <!--  nav -->
+          <nav class="bg-white m-auto fixed-top py-2">
+            <div class="container-fluid">
+              <div class="d-flex ali justify-content-between">
+                <!-- left-nav -->
+                <div class="left-nav d-flex align-items-center column-gap-3">
+                  <div class="icon-left shadow">
+                    <i class="fa-solid fa-address-book"></i>
+                  </div>
+                  <div>
+                    <h2>Contact<span class="hub">Hub</span></h2>
+                    <p>Smart Contact Manager</p>
+                  </div>
+                </div>
+                <!-- right-nav -->
+                <div
+                  class="right-nav d-flex align-items-center ms-auto column-gap-3"
+                >
+                  <button id="btn-add" onclick="setproduct()">
+                    <i class="fa-solid fa-plus me-2"></i>Add
+                    <span>Contact</span>
+                  </button>
+                  <div class="sitt">
+                    <i class="fa-solid fa-bell text-secondary"></i>
+                  </div>
+                  <div class="sitt">
+                    <i class="fa-solid fa-gear text-secondary"></i>
+                  </div>
+                  <div class="img-nav">
+                    <img
+                      src="images/avatar-4 (1).jpg"
+                      class="w-100 object-fit-cover rounded-3"
+                      alt="avatar"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <div class="row row-gap-2 pb-4">
+            <!-- TOTAL -->
+            <div class="col-sm-6 col-md-4">
+              <div
+                class="total d-flex align-items-center column-gap-3 p-3 rounded-4 bg-white"
+              >
+                <span class="total-icon shadow"
+                  ><i class="fa-solid fa-users text-white"></i
+                ></span>
+                <div class="d-flex flex-column">
+                  <span class="text-secondary name">TOTAL</span>
+                  <span class="num" id="totalContact">0</span>
+                </div>
+              </div>
+            </div>
+            <!-- FAVORITES -->
+            <div class="col-sm-6 col-md-4">
+              <div
+                class="fav d-flex align-items-center column-gap-3 p-3 rounded-4 bg-white"
+              >
+                <span class="fav-icon shadow"
+                  ><i class="fa-solid fa-star text-white"></i
+                ></span>
+                <div class="d-flex flex-column">
+                  <span class="text-secondary name">FAVORITES</span>
+                  <span class="num" id="favCount">0</span>
+                </div>
+              </div>
+            </div>
+            <!-- EMERGENCY -->
+            <div class="col-sm-6 col-md-4">
+              <div
+                class="emerg d-flex align-items-center column-gap-3 p-3 rounded-4 bg-white"
+              >
+                <span class="emerg-icon shadow"
+                  ><i class="fa-solid fa-heart-pulse text-white"></i
+                ></span>
+                <div class="d-flex flex-column">
+                  <span class="text-secondary name">EMERGENCY</span>
+                  <span class="num" id="emergCount">0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- COL-XL-9 -->
+            <div class="col-xxl-9">
+              <h2 class="mt-1 title">All Contacts</h2>
+              <p class="text-secondary bottom-title">
+                Manage and organize your 2 contacts
+              </p>
+              <!-- SEARCH -->
+              <div class="w-100 position-relative search mb-4">
+                <span class="position-absolute search-icon"
+                  ><i class="fa-solid fa-magnifying-glass"></i
+                ></span>
+                <input
+                  type="search"
+                  id=""
+                  class="w-100 px-5 py-2 rounded-3 border-0"
+                  placeholder="Search by name,phone,or email..."
+                />
+              </div>
+              <!-- COL-SM-6 -->
+              <div class="row" id="rowData">
+                   <!-- <div class=" no-found col-md-12 d-flex flex-column align-items-center  ">
+                  <div class="d-flex align-items-center justify-content-center icon"><i class="fa-solid fa-address-book"></i></div>
+                  <p class=" m-0 one"> No contacts found</p>
+                   <p class="two">Click "Add Contact" to get started</p></div>  -->
+
+
+
+
+                <div class="col-md-6 mb-3 d-none">
+                  <div class="call rounded-4">
+                    <div class="bg-white p-3 rounded-top-4">
+                      <div class="d-flex column-gap-3">
+                        <!-- image -->
+                        <div class="position-relative images">
+                          <span class="position-absolute heart d-none" id="fav">
+                            <i class="fa-solid fa-heart-pulse text-white"></i
+                          ></span>
+                          <span class="position-absolute star d-none" id="emerg"
+                            ><i class="fa-solid fa-star text-white"></i
+                          ></span>
+                          <img
+                            src="images/avatar-4 (1).jpg"
+                            class="w-100 rounded-3"
+                            alt=""
+                          />
+                        </div>
+                        <div>
+                          <h5 class="name">mohamed taha</h5>
+                          <p class="number text-secondary fw-semibold">
+                            <span><i class="fa-solid fa-phone me-1"></i></span>
+                            01118438192
+                          </p>
+                        </div>
+                      </div>
+                      <!-- email -->
+                      <div class="d-flex align-items-center email pt-3">
+                        <div></div>
+                        <p class="text-secondary email-text">
+                          <span class="email-icon me-2"
+                            ><i class="fa-solid fa-envelope"></i
+                          ></span>
+                          mhmdthfwdh@gmail.com
+                        </p>
+                      </div>
+                      <div class="d-flex align-items-center location">
+                        <div></div>
+                        <p class="text-secondary loc-text m-0 mb-2">
+                          <span class="loc-icon me-2"
+                            ><i class="fa-solid fa-location-dot"></i
+                          ></span>
+                          giza
+                        </p>
+                      </div>
+                      <div>
+                        <span class="other d-none">other</span>
+                        <span class="friends d-none">Friends</span>
+                        <span class="family d-none">Family</span>
+                        <span class="work d-none">Work</span>
+                        <span class="school">School</span>
+
+                        <span class="emergen"
+                          ><i class="fa-solid fa-heart-pulse"></i>
+                          Emergency</span
+                        >
+                      </div>
+                    </div>
+                    <div class="bottom-conect p-3 rounded-bottom-4">
+                      <div class="d-flex align-items-center">
+                        <div class="conect-email">
+                          <a href="tel" class="tel"
+                            ><i class="fa-solid fa-phone"></i
+                          ></a>
+                          <a href="mailto" class="ms-2 mailto"
+                            ><i class="fa-solid fa-envelope"></i
+                          ></a>
+                        </div>
+                        <div
+                          class="d-flex ms-auto column-gap-3 conection align-items-center"
+                        >
+                          <div class="star">
+                            <i class="fa-regular fa-star"></i>
+
+                          </div>
+                           <div class="star-1 d-none">
+                            <i class="fa-solid fa-star"></i>
+
+                          </div>
+
+                          <div class="heart">
+                            <i class="fa-regular fa-heart"></i>
+                          </div>
+                           <div class="heart-1 d-none">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                          </div>
+                          <div class="pen">
+                            <i class="fa-solid fa-pencil"></i>
+                          </div>
+                          
+                          <div class="trash">
+                            <i class="fa-solid fa-trash"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <!-- COL-XL-3 -->
+            <div class="col-xxl-3">
+              <div class="bg-white rounded-4 border border-2 mb-3 ">
+                <!-- favorites -->
+                <div
+                  class="d-flex justify-content-start align-items-center favorites p-3 column-gap-3 rounded-top-4"
+                >
+                  <!-- star -->
+                  <div class="px-2 py-2 favorites-top">
+                    <i class="fa-solid fa-star text-white"></i>
+                  </div>
+                  <div class="favorites-bottom">
+                    <h5 class="m-0">Favorites</h5>
+                    <p class="m-0">Quick access to starred contacts</p>
+                  </div>
+                </div>
+                <div class="p-4 d-flex flex-column row-gap-2" id="favSection">
+                  <div class=" ">
+                  <p class="no-fav text-secondary">No favorites yet</p>
+                </div>
+                  <!-- <div class="d-none d-flex align-items-center p-2 rounded-3 detal">
+                    <div class="image">
+                      <img
+                        src="images/avatar-4 (1).jpg"
+                        class="w-100 rounded-2"
+                        alt=""
+                      />
+                    </div>
+                    <div class="px-2">
+                      <p class="m-0 fw-semibold">mohamed taha</p>
+                      <p class="text-secondary m-0 num">01118438192</p>
+                    </div>
+                    <a href="tel" class="ms-auto"
+                      ><i class="fa-solid fa-phone"></i
+                    ></a>
+                  </div> -->
+                </div>
+              </div>
+              <div class="bg-white rounded-4 border border-2">
+                <div
+                  class="d-flex justify-content-start align-items-center emergency p-3 column-gap-3 rounded-top-4" 
+                >
+                  <div class="px-2 py-2 emergency-top">
+                    <i class="fa-solid fa-heart-pulse text-white"></i>
+                  </div>
+                  <div class="emergency-bottom">
+                    <h5 class="m-0">emergency</h5>
+                    <p class="m-0">Quick access to starred contacts</p>
+                  </div>
+                </div>
+                <div class="p-4 d-flex flex-column row-gap-2" id="emergSection">
+                   <div class="p-2 ">
+                  <p class="no-emerg text-secondary">No emergency contact</p>
+                </div>
+
+                  <!-- <div
+                    class="d-none d-flex align-items-center p-2 rounded-3 detal-emergency"
+                  >
+                    <div class="image">
+                      <img
+                        src="images/avatar-4 (1).jpg"
+                        class="w-100 rounded-2"
+                        alt=""
+                      />
+                    </div>
+                    <div class="px-2">
+                      <p class="m-0 fw-semibold">mohamed taha</p>
+                      <p class="text-secondary m-0 num">01118438192</p>
+                    </div>
+                    <a href="tel" class="ms-auto"
+                      ><i class="fa-solid fa-phone"></i
+                    ></a>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- add contact -->
+      <section>
+        <!-- light-container -->
+        <div class="light-container d-flex justify-content-center d-none" id="lightContainer">
+          <div class="box bg-white py-2 ">
+            <div class="p-3">
+              <div class="add d-flex ">
+                <h2>Add New Contact</h2>
+                <span class="xmark ms-auto" onclick="closeModel()"
+                  ><i class="fa-solid fa-xmark"></i
+                ></span>
+              </div>
+              <div
+                class="profile d-flex flex-column align-items-center justify-content-center py-4"
+              >
+                <div
+                  class="mb-3 photo d-flex justify-content-center align-items-center rounded-circle"
+                >
+                  <i class="fa-solid fa-user text-white"></i>
+                </div>
+                <div>
+                  <label for="img">
+                    <i class="fa-solid fa-camera me-1"></i>
+                    Change Photo</label
+                  >
+                  <input type="file" id="img" />
+                </div>
+              </div>
+              <!-- name -->
+              <div class="d-flex flex-column name input mb-4">
+                <label for="name">Full Name <span>*</span></label>
+                <input 
+                  type="text"
+                  id="fullName"
+                  placeholder="Enter full name"
+                 
+                />
+              </div>
+              <!-- phone -->
+              <div class="d-flex flex-column phone input mb-4">
+                <label for="phone">Phone Number <span>*</span></label>
+                <input  type="tel" id="phone" placeholder="e.g.,01118438192" />
+              </div>
+              <!-- email -->
+              <div class="d-flex flex-column email input mb-4">
+                <label for="email">Email Address </label>
+                <input  type="email" id="email" placeholder="name@example.com" />
+              </div>
+              <!-- address -->
+              <div class="d-flex flex-column address input mb-4">
+                <label for="address">Address </label>
+                <input type="text" id="address" placeholder="Enter address" />
+              </div>
+              <!-- groub -->
+              <div class="d-flex flex-column groub input mb-4">
+                <label for="groub">Groub </label>
+                <select id="groub">
+                  <option value="" selected>Select groub</option>
+                  <option value="family">Family</option>
+                  <option value="friends">Friends</option>
+                  <option value="work">Work</option>
+                  <option value="school">School</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <!-- notes -->
+              <div class="d-flex flex-column notes input mb-4">
+                <label for="notes">Notes </label>
+                <textarea
+                  id="notes"
+                  placeholder="Add notes about this contact"
+                ></textarea>
+              </div>
+              <div class="d-flex column-gap-3 align-items-center mb-4">
+                <!-- checkbox ==> favorites -->
+                <div class="favorites d-flex align-items-center column-gap-2 " >
+                  <input type="checkbox" id="favoritesChecked" />
+
+                  <label for="favorites">
+                    <i class="fa-solid fa-star"></i>
+                    Favorites
+                  </label>
+                </div>
+                <!-- checkbox ==> emergency -->
+                <div class="emergency d-flex align-items-center column-gap-2">
+                  <input type="checkbox" id="emergencyChecked" />
+
+                  <label for="emergency">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    Emergency
+                  </label>
+                </div>
+              </div>
+              <!-- button -->
+              <button class="m-auto d-block my-3  save" onclick="addContact()" id="save" > <i class="fa-solid fa-check me-2 text-white"></i>Save Contact</button>
+              <button class="m-auto d-block my-3  update d-none" onclick="updateContact()"  id="update"> <i class="fa-solid fa-check me-2 text-white"></i>update</button>
+
+              <button class="d-block m-auto cancel" onclick="closeModel()">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  </body>
+</html>
